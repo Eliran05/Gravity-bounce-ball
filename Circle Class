@@ -1,0 +1,28 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+
+/**
+ * Circle defines object that...
+ * @author User | 04/07/2024
+ */
+public class Circle extends Oval
+{
+    
+    // Attributes תכונות
+     private Color color;
+    
+    // Methoods פעולות
+    
+    public Circle(double x, double y, double radius,Color color)
+    {
+        super(x, y, radius);
+        this.color = color;
+    }
+    
+   public void draw(Graphics g){
+    g.setColor(color);
+    g.drawOval((int) (super.getX() - super.getRadius()), (int) (super.getY() - super.getRadius()),
+                 2 * (int) super.getRadius(), 2 * (int) super.getRadius());
+    }
+}
