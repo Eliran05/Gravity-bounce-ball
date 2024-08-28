@@ -1,0 +1,81 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+/**
+ * Ball defines object that...
+ * @author User | 03/07/2024
+ */
+public class Ball extends Oval
+{
+    // Attributes תכונות
+    private double dx, dy;
+    private Color color;
+    // Methoods פעולות
+
+    public Ball(double x, double y, double radius, double dx, double dy, Color color)
+    {
+        super(x, y, radius);
+        this.color = color;
+        this.dx = dx;
+        this.dy = dy;
+    }
+
+    public Color getColor()
+    {
+        return color;
+    }
+
+    public void setColor(Color color)
+    {
+        this.color = color;
+    }
+
+    public void move(int canvasW, int canvasY)
+    {
+        if (getX()+getRadius() >= canvasW || getX() - getRadius() <= 0)
+        {
+            dx = -dx;
+        }
+        if (getY()+getRadius() >= canvasY || getY() - getRadius() <= 0)
+        {
+            dy = -dy;
+        }
+        setX(getX() + this.dx);
+        setY(getY() + this.dy);
+    }
+
+     public void reverseDirection() {
+        dx = -dx;
+        dy = -dy;
+    }
+
+    public double getDx()
+    {
+        return dx;
+    }
+
+    public void setDx(double dx)
+    {
+        this.dx = dx;
+    }
+
+    public double getDy()
+    {
+        return dy;
+    }
+
+    public void setDy(double dy)
+    {
+        this.dy = dy;
+    }
+    
+     
+     
+    public void draw(Graphics g)
+    {
+        g.setColor(color);
+        g.fillOval((int) (super.getX() - super.getRadius()), (int) (super.getY() - super.getRadius()),
+                2 * (int) super.getRadius(), 2 * (int) super.getRadius());
+    }
+
+}
