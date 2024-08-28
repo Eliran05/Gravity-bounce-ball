@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 /**
  * EscapeBall run program that...
- * @author User | 04/07/2024
+ * @Eliran Mimoun | 04/07/2024
  */
 public class EscapeBall extends JFrame
 {
