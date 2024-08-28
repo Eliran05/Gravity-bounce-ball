@@ -1,13 +1,13 @@
 
 /**
  * Oval defines object that...
- * @author User | 04/07/2024
+ * @Eliran Mimoun | 04/07/2024
  */
 public class Oval
 {
-    // Attributes תכונות
+    // Attributes 
     double x,y,radius;
-    // Methoods פעולות
+    // Methoods 
 
     public Oval(double x, double y, double radius)
     {
